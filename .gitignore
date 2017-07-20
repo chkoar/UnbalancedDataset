@@ -67,3 +67,8 @@ target/
 *.pyproj
 *.suo
 *.vs
+/*.csproj
+/.spyproject
+/.vscode
+/bin/Debug
+/obj/x86/Debug
