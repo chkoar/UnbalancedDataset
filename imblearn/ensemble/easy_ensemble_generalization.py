@@ -3,6 +3,7 @@
 # Authors: Christos Aridas
 #
 # License: MIT
+from __future__ import print_function
 
 import numpy as np
 from sklearn.base import ClassifierMixin, clone
@@ -10,6 +11,7 @@ from sklearn.ensemble import VotingClassifier
 from sklearn.ensemble.base import BaseEnsemble, _set_random_states
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.utils import check_random_state
+from sklearn.utils.multiclass import check_classification_targets
 from sklearn.utils.validation import check_is_fitted
 
 from ..pipeline import Pipeline
@@ -63,13 +65,13 @@ class EasyEnsembleGeneralization(BaseEnsemble, ClassifierMixin):
 
     Examples
     --------
-    >>>import numpy as np
-    >>>from imblearn.ensemble import EasyEnsembleGeneralization as EEG
-    >>>X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
-    >>>y = np.array([1, 1, 1, 2, 2, 2])
-    >>>eeg = EEG(voting='hard', random_state=0)
-    >>>eeg.fit(X,y)
-    >>>eeg.predict(X)
+    >>> import numpy as np
+    >>> from imblearn.ensemble import EasyEnsembleGeneralization as EEG
+    >>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
+    >>> y = np.array([1, 1, 1, 2, 2, 2])
+    >>> eeg = EEG(voting='soft', random_state=0)
+    >>> eeg = eeg.fit(X,y)
+    >>> print(eeg.predict(X))
     [1 1 1 2 2 2]
     >>>
     """
@@ -129,6 +131,9 @@ class EasyEnsembleGeneralization(BaseEnsemble, ClassifierMixin):
             Returns self.
         """
 
+        
+        check_classification_targets(y)
+        
         random_state = check_random_state(self.random_state)
 
         self._validate_estimator()
