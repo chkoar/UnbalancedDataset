@@ -133,8 +133,6 @@ class EasyEnsembleGeneralization(BaseEnsemble, ClassifierMixin):
 
         
         check_classification_targets(y)
-        
-        random_state = check_random_state(self.random_state)
 
         self._validate_estimator()
         self._validate_sampler()
