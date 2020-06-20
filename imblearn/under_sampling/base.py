@@ -10,7 +10,7 @@ from ..base import BaseSampler
 class BaseUnderSampler(BaseSampler):
     """Base class for under-sampling algorithms.
 
-    Warning: This class should not be used directly. Use the derive classes
+    Warning: This class should not be used directly. Use the derive classesasdfasfasdf
     instead.
     """
 
