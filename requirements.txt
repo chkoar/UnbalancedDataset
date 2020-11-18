@@ -2,3 +2,12 @@ numpy>=1.11
 scipy>=0.17
 scikit-learn>=0.23
 joblib>=0.11
+sphinxsphinx-gallery
+sphinx_rtd_theme
+sphinxcontrib-bibtex
+sphinx_reredirects
+numpydoc
+matplotlib
+pandas
+pytest
+pytest-cov
