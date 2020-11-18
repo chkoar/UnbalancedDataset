@@ -342,5 +342,5 @@ linkcode_resolve = make_linkcode_resolve('imblearn',
                                          '{package}/{path}#L{lineno}')
 
 redirects = {
-    "*": "https://imbalanced-learn.org/docs/$source.html"
+    "*": "https://imbalanced-learn.org/$source.html"
 }
