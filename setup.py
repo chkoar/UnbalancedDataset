@@ -41,6 +41,7 @@ INSTALL_REQUIRES = [
     'scikit-learn>=0.23',
     'joblib>=0.11'
 ]
+
 EXTRAS_REQUIRE = {
     'tests': [
         'pytest',
@@ -50,6 +51,7 @@ EXTRAS_REQUIRE = {
         'sphinx-gallery',
         'sphinx_rtd_theme',
         'sphinxcontrib-bibtex',
+        'sphinx_reredirects',
         'numpydoc',
         'matplotlib',
         'pandas',
